@@ -161,3 +161,7 @@ docker compose logs -f db
 ## Лицензия
 
 MIT — используй свободно в учебных целях.
+
+## БД по адресу
+
+http://localhost:9080/browser/
