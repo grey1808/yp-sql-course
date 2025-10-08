@@ -2,7 +2,7 @@
 # === Настройки проекта ===
 PROJECT_NAME ?= yp-sql-course
 CONTAINER     ?= yp-sql-db
-COMPOSE       ?= docker compose
+COMPOSE       ?= docker-compose
 
 # Подхватываем переменные из .env для целей типа psql
 ifneq (,$(wildcard .env))
