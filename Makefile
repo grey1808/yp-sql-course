@@ -2,7 +2,10 @@
 # === Настройки проекта ===
 PROJECT_NAME ?= yp-sql-course
 CONTAINER     ?= yp-sql-db
-COMPOSE       ?= docker-compose
+# Пытаемся найти v2-плагин `docker compose`, иначе падаем обратно на старый `docker-compose`
+COMPOSE ?= $(shell \
+  docker compose version >/dev/null 2>&1 && echo "docker compose" || \
+  (command -v docker-compose >/dev/null 2>&1 && echo "docker-compose" || echo "docker compose") )
 
 # Подхватываем переменные из .env для целей типа psql
 ifneq (,$(wildcard .env))
